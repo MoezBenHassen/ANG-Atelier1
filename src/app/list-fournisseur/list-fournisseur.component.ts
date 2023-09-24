@@ -19,5 +19,10 @@ export class ListFournisseurComponent {
   }
   getColor(code:string):boolean{
     return code.includes("2A");
+  }
+  deleteFournisseur(idFournisseur:number):void{
+    if(confirm("Voulez-vous supprimer ce fournisseur ?")){
+      this.listFournisseur = this.listFournisseur.filter(f=>f.idFournisseur != idFournisseur);
+    }
   }  
 }

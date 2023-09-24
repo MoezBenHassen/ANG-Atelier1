@@ -2,7 +2,7 @@
 <div *ngFor="let Fournisseur of listFournisseur">
     <fieldset *ngIf="isValidID(Fournisseur.idFournisseur)" 
         [style.background-color]="Fournisseur.libelle=='hp' ? 'green' : 'yellow'"
-
+        (dblclick)="deleteFournisseur(Fournisseur.idFournisseur)"
     >
         <legend>IdFournisseur:  {{Fournisseur.idFournisseur}}</legend>
         <p [style.font-weight]="getColor(Fournisseur.code) ? 'bold' : 'normal'">Code: {{Fournisseur.code}}</p>
